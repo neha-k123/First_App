@@ -28,6 +28,18 @@ public class MainActivity extends AppCompatActivity {
                 displayText.setText(displayText.getText().toString()+" "+responseText.getText().toString());
             }
         });
+        responseText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus){
+                    if(responseText.getText().toString().equals("TJ")){
+                        displayText.setText("TJ Rocks!");
+                        responseText.setText("");
+                        responseText.setHint("That's a good name.");
+                    }
+                }
+            }
+        });
     }
 }
 
