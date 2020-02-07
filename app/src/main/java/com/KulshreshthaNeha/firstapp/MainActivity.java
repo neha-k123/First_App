@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     Button submitButton;
     EditText responseText;
     TextView displayText;
+    int n;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 System.out.println("Hello mom");
                 Log.i("testButton","Hi dad! "+responseText.getText().toString());
-                displayText.setText(displayText.getText().toString()+" "+responseText.getText().toString());
+                //displayText.setText(displayText.getText().toString()+" "+responseText.getText().toString());
+                n=n+1;
+                displayText.setText(n+"");
             }
         });
         responseText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
